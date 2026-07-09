@@ -12,6 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
+  <link rel="icon" href="asset/logo.png?v=2" type="image/png">
 
   <style>
     /* ==========================================================================
@@ -386,19 +387,19 @@
       background: var(--ink);
       color: var(--paper);
       border-color: var(--ink);
-      box-shadow: 0 4px 0 var(--ink-soft), 0 5px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 0 var(--ink-soft), 0 5px 10px rgba(0, 0, 0, 0.2);
     }
 
     .btn-primary:hover {
       background: var(--accent-ink);
       border-color: var(--accent-ink);
       transform: translateY(2px);
-      box-shadow: 0 2px 0 var(--ink-soft), 0 3px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 0 var(--ink-soft), 0 3px 5px rgba(0, 0, 0, 0.2);
     }
-    
+
     .btn-primary:active {
       transform: translateY(4px);
-      box-shadow: 0 0 0 var(--ink-soft), 0 0 0 rgba(0,0,0,0.2);
+      box-shadow: 0 0 0 var(--ink-soft), 0 0 0 rgba(0, 0, 0, 0.2);
     }
 
     .btn-secondary {
@@ -406,19 +407,19 @@
       backdrop-filter: blur(8px);
       color: var(--ink);
       border-color: var(--line-strong);
-      box-shadow: 0 4px 0 var(--line-strong), 0 5px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 0 var(--line-strong), 0 5px 10px rgba(0, 0, 0, 0.05);
     }
 
     .btn-secondary:hover {
       background: var(--panel);
       border-color: var(--ink);
       transform: translateY(2px);
-      box-shadow: 0 2px 0 var(--ink-dim), 0 3px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 0 var(--ink-dim), 0 3px 5px rgba(0, 0, 0, 0.1);
     }
-    
+
     .btn-secondary:active {
       transform: translateY(4px);
-      box-shadow: 0 0 0 var(--ink-dim), 0 0 0 rgba(0,0,0,0.1);
+      box-shadow: 0 0 0 var(--ink-dim), 0 0 0 rgba(0, 0, 0, 0.1);
     }
 
     /* Icons */
@@ -499,24 +500,30 @@
 
         <!-- Logo (Spans 3 cols) -->
         <div class="col-3">
-          <a href="index.html" class="nav-mark">
-            <span class="mono-box">AM</span>
+          <a href="index.html" class="nav-mark" style="display: flex; align-items: center; gap: 10px;">
+            <img src="asset/logo.png" alt="Abhay Mishra Logo" style="height: 36px; width: auto; border-radius: 50%;">
             ABHAY MISHRA
           </a>
         </div>
 
         <!-- Main Menu (Spans 6 cols, centered alignment handled by flex within) -->
-        <div class="col-6 nav-links">
+        <div class="col-5 nav-links">
           <a href="index.html">Portfolio</a>
-          <a href="index.html#experience">Experience</a>
-          <a href="index.html#skills">Skills</a>
           <a href="cover-letter.html" class="active">Cover Letter</a>
         </div>
 
         <!-- Action Buttons (Spans 3 cols) -->
-        <div class="col-3 nav-actions">
-          <button class="btn btn-secondary" onclick="window.print()">
-            <svg class="icon" viewBox="0 0 24 24">
+        <div class="col-4 nav-actions">
+          <button
+            onclick="const a = document.createElement('a'); a.href = 'asset/Abhay_Mishra_Resume.pdf'; a.download = 'Abhay_Mishra_Resume.pdf'; a.click();"
+            class="btn btn-secondary no-print">
+            <svg class="icon" viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
+              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+            </svg>
+            Download CV
+          </button>
+          <button class="btn btn-secondary no-print" onclick="window.print()">
+            <svg class="icon" viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor;">
               <path
                 d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
             </svg>
@@ -582,7 +589,8 @@
           <p>Building systems that scale is straightforward. Leading teams that deliver at scale, under audit, and under
             load — that's the discipline I've built over twelve years. I'm writing to express my strong interest in
             <strong>Engineering Manager</strong> or <strong>Technical Lead Manager</strong> roles within your
-            organization.</p>
+            organization.
+          </p>
 
           <p>Throughout my career, I've designed high-availability Spring Boot microservices for enterprise SaaS,
             Fintech, and large-scale Government platforms. For the past three years at <strong>C-DAC</strong>, I've led
