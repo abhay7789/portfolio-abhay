@@ -23,9 +23,9 @@
   --good: #2f7a52;
 
   /* ---- Type ---- */
-  --font-display: 'Space Grotesk', 'IBM Plex Sans Condensed', sans-serif;
-  --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-display: 'Outfit', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
 
   /* ---- Spacing ---- */
   --space-xs: 2px;
@@ -66,9 +66,8 @@ body {
   font-size: 16px;
 }
 
+/* Bootstrap will handle container widths, but we can override base padding if needed */
 .container {
-  max-width: 1400px;
-  margin: 0 auto;
   padding: 0 var(--space-lg);
 }
 
@@ -468,14 +467,6 @@ footer.site-foot {
 .foot-row a:hover { text-decoration: underline; }
 
 /* ---- Utility ---- */
-.flex { display: flex; }
-.flex-wrap { flex-wrap: wrap; }
-.gap-sm { gap: var(--space-sm); }
-.gap-md { gap: var(--space-md); }
-.mt-lg { margin-top: var(--space-lg); }
-.mt-xl { margin-top: var(--space-xl); }
-.mb-md { margin-bottom: var(--space-md); }
-.mb-lg { margin-bottom: var(--space-lg); }
 
 .reveal {
   opacity: 0;
@@ -488,36 +479,7 @@ footer.site-foot {
   * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
 
-/* ---- 12-Column Grid System ---- */
-.grid-12 {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--space-md);
-}
-
-.col-1  { grid-column: span 1; }
-.col-2  { grid-column: span 2; }
-.col-3  { grid-column: span 3; }
-.col-4  { grid-column: span 4; }
-.col-5  { grid-column: span 5; }
-.col-6  { grid-column: span 6; }
-.col-7  { grid-column: span 7; }
-.col-8  { grid-column: span 8; }
-.col-9  { grid-column: span 9; }
-.col-10 { grid-column: span 10; }
-.col-11 { grid-column: span 11; }
-.col-12 { grid-column: span 12; }
-
-@media (max-width: 900px) {
-  .grid-12 [class*="col-"] { grid-column: span 6; }
-  .grid-12 .col-12, .grid-12 .col-9, .grid-12 .col-8 { grid-column: span 12; }
-}
-
-@media (max-width: 640px) {
-  .grid-12 [class*="col-"] { grid-column: span 12 !important; }
-}
-
-/* ---- Responsive ---- */
+/* ---- Responsive Tweaks (non-layout) ---- */
 @media (max-width: 768px) {
   .readout { grid-template-columns: repeat(2, 1fr); }
   .readout-item:nth-child(2) { border-right: none; }
@@ -525,7 +487,6 @@ footer.site-foot {
   .role-meta { text-align: left; }
 }
 @media (max-width: 560px) {
-  .container { padding: 0 var(--space-md); }
   section { padding: var(--space-2xl) 0; }
 }
 
@@ -571,14 +532,6 @@ footer.site-foot {
   .spec-table td { border-bottom: 1px solid #e5e7eb !important; }
   
   .tag { background: #f3f4f6 !important; border: 1px solid #d1d5db !important; }
-  
-  .grid-12 { display: flex !important; }
-  .grid-12 .col-8 { width: 66.66% !important; }
-  .grid-12 .col-4 { width: 33.33% !important; }
-  
-/* ---- Reset layout for flex wrapping on print so things don't get cut off ---- */
-  .flex-wrap { display: flex !important; flex-wrap: wrap !important; }
-  .flex-wrap > div { width: 48% !important; margin-bottom: 15px !important; }
 }
 
 
